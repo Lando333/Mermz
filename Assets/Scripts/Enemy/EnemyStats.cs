@@ -60,7 +60,7 @@ public class EnemyStats : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionStay2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {

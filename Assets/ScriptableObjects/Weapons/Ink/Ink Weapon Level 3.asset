@@ -20,5 +20,5 @@ MonoBehaviour:
   level: 3
   nextLevelControllerPrefab: {fileID: 0}
   name: Ink Level 3
-  description: Damage increases by 2
+  description: Damage increased by 2
   icon: {fileID: 21300000, guid: e4e49566ad4bc5049af9637b611e6175, type: 3}
