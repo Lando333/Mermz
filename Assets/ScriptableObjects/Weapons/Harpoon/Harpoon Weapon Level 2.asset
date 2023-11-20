@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557d9d56695aba74695398016dae92f3, type: 3}
+  m_Name: Harpoon Weapon Level 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9102114265007546325, guid: b59f6f7a98bbd8e4c9980dc267bd1605, type: 3}
+  damage: 5
+  speed: 15
+  cooldownDuration: 2
+  pierce: 2
+  level: 2
+  nextLevelControllerPrefab: {fileID: 989524987853184763, guid: 5231305bd348f834a88cfed21e7edab4, type: 3}
+  name: Harpoon Level 2
+  description: Speed increases by 5
+  icon: {fileID: 554424054, guid: 2f24bfc0c00e8704fa014bfc7316c928, type: 3}
