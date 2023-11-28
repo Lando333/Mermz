@@ -20,5 +20,5 @@ MonoBehaviour:
   level: 1
   nextLevelControllerPrefab: {fileID: 989524987853184763, guid: 37f4302c8965ad94aad7ce58f288de0d, type: 3}
   name: Harpoon
-  description: Shoots harpoons in the direction the player is facing
+  description: Shoots harpoons
   icon: {fileID: 1954964061, guid: 3c0df029cd710cf4986b158087d2c123, type: 3}
