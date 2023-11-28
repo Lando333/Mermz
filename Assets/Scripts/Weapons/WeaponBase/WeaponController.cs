@@ -18,18 +18,16 @@ public class WeaponController : MonoBehaviour
         currentCooldown = weaponData.CooldownDuration;
     }
 
-
     protected virtual void Update()
     {
         currentCooldown -= Time.deltaTime;
         
         ToggleAttackMode();
-        
+
         if (autoAttack)
         {
             Attack();
         }
-
         else
         {
             ManualAttack();
