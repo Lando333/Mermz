@@ -8,9 +8,9 @@ public class WeaponController : MonoBehaviour
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
     float currentCooldown;
+    bool autoAttack = true;
 
     protected PlayerMovement pm;
-
 
     protected virtual void Start()
     {
@@ -22,13 +22,45 @@ public class WeaponController : MonoBehaviour
     protected virtual void Update()
     {
         currentCooldown -= Time.deltaTime;
-        if (currentCooldown <= 0f)
+        
+        ToggleAttackMode();
+        
+        if (autoAttack)
+        {
+            Attack();
+        }
+
+        else
+        {
+            ManualAttack();
+        }
+    }
+
+    private void ToggleAttackMode()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            autoAttack = !autoAttack;
+        }
+    }
+
+    private void ManualAttack()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
     }
 
-    protected virtual void Attack()
+    private void Attack()
+    {
+        if (currentCooldown <= 0f)
+        {
+            ResetCooldown();
+        }
+    }
+
+    protected virtual void ResetCooldown()
     {
         currentCooldown = weaponData.CooldownDuration;
     }

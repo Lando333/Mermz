@@ -11,9 +11,9 @@ public class InkController : WeaponController
     }
 
 
-    protected override void Attack()
+    protected override void ResetCooldown()
     {
-        base.Attack();
+        base.ResetCooldown();
         GameObject spawnedInk = Instantiate(weaponData.Prefab);
         spawnedInk.transform.position = transform.position;
         spawnedInk.transform.parent = transform;
