@@ -16,6 +16,8 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
+        HandleSpriteFlip();
+
         if (pm.moveDir.x !=0 || pm.moveDir.y != 0)
         {
             am.SetBool("Move", true);
@@ -23,6 +25,20 @@ public class PlayerAnimator : MonoBehaviour
         else
         {
             am.SetBool("Move", false);
+        }
+    }
+
+    private void HandleSpriteFlip()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (mousePosition.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0f, -180f, 0f);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
     }
 }
