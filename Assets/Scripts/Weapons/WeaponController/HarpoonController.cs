@@ -10,11 +10,22 @@ public class HarpoonController : WeaponController
         base.Start();
     }
 
-    protected override void ResetCooldown()
+    protected override void Attack()
     {
-        base.ResetCooldown();
-        GameObject spawnedHarpoon = Instantiate(weaponData.Prefab);
-        spawnedHarpoon.transform.position = transform.position;  // Assign position to same as this obj, parented to player
-        spawnedHarpoon.GetComponent<HarpoonBehavior>().DirectionChecker(pm.lastMovedVector); // Reference and set the direction
+        if (currentCooldown <= 0)
+        {
+            base.Attack();
+            GameObject spawnedHarpoon = Instantiate(weaponData.Prefab);
+            spawnedHarpoon.transform.position = transform.position;
+
+            Vector2 direction = currentTarget - (Vector2)transform.position;
+
+            // Set the reference to WeaponController in the spawned harpoon
+            spawnedHarpoon.GetComponent<ProjectileWeaponBehavior>().SetWeaponController(this);
+
+            spawnedHarpoon.GetComponent<ProjectileWeaponBehavior>().Direction = direction;
+            spawnedHarpoon.GetComponent<HarpoonBehavior>().RotateProjectile();
+        }
     }
+
 }

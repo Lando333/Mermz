@@ -5,11 +5,19 @@ using UnityEngine;
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
+    protected PlayerMovement pm;
+    private WeaponController weaponController;
 
     protected Vector3 direction;
-    public float destroyAfterSeconds;
+    public Vector2 Direction
+    {
+        get { return direction; }
+        set { direction = value.normalized; }
+    }
+
 
     // Current stats
+    public float destroyAfterSeconds;
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
@@ -22,65 +30,33 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
     }
+    protected virtual void Start()
+    {
+        Destroy(gameObject, destroyAfterSeconds);
+    }
+
+    public void SetWeaponController(WeaponController controller)
+    {
+        weaponController = controller;
+    }
 
     public float GetCurrentDamage()
     {
         return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
     }
 
-    protected virtual void Start()
+    public void RotateProjectile()
     {
-        Destroy(gameObject, destroyAfterSeconds);
+        if (weaponController != null)
+        {
+            direction = (weaponController.currentTarget - (Vector2)transform.position).normalized;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
 
-    public void DirectionChecker(Vector3 dir)
-    {
-        direction = dir;
-
-        float dirX = direction.x;
-        float dirY = direction.y;
-
-        Vector3 scale = transform.localScale;
-        Vector3 rotation = transform.rotation.eulerAngles;
-
-        if (dirX < 0 && dirY == 0)      // left
-        {
-            scale.x = scale.x * -1;
-        }
-        else if (dirX == 0 && dirY < 0) // down
-        {
-            scale.y = scale.y * -1;
-            rotation.z = -90f;
-        }
-        else if (dirX == 0 && dirY > 0) // up
-        {
-            scale.x = scale.x * -1;
-            scale.y = scale.y * -1;
-            rotation.z = -90f;
-        }
-        else if (dirX > 0 && dirY > 0) // right up
-        {
-            rotation.z = 45f;
-        }
-        else if (dirX > 0 && dirY < 0) // right down
-        {
-            rotation.z = -45f;
-        }
-        else if (dirX < 0 && dirY > 0) // left up
-        {
-            scale.x = scale.x * -1;
-            rotation.z = -45f;
-        }
-        else if (dirX < 0 && dirY < 0) // left down
-        {
-            scale.x = scale.x * -1;
-            rotation.z = 45f;
-        }
-
-        transform.localScale = scale;
-        transform.rotation = Quaternion.Euler(rotation);
-    }
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Enemy"))
