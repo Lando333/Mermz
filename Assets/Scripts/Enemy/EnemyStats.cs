@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
@@ -18,6 +19,15 @@ public class EnemyStats : MonoBehaviour
     public float despawnDistance = 20f;
     Transform player;
 
+    [Header("Damage Feedback")]
+    public Color damageColor = new Color(1, 0, 0, 1);   // The color of the damage flash
+    public float damageFlashDuration = .2f;             // How long the flash lasts
+    public float deathFadeTime = .6f;                   // Time it takes for enemy to fade
+    Color originalColor;
+    SpriteRenderer sr;
+    EnemyMovement movement;
+
+
 
     void Awake()
     {
@@ -29,6 +39,10 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerStats>().transform;
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
+
+        movement = GetComponent<EnemyMovement>();
     }
 
     void Update()
@@ -48,11 +62,19 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
+        StartCoroutine(DamageFlash());
 
         if (currentHealth <= 0)
         {
             Kill();
         }
+    }
+
+    IEnumerator DamageFlash()
+    {
+        sr.color = damageColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        sr.color = originalColor;
     }
 
     private void Kill()
