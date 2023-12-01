@@ -8,6 +8,8 @@ public class PlayerAnimator : MonoBehaviour
     Animator am;
     PlayerMovement pm;
 
+    [SerializeField] SpriteRenderer playerSprite;
+
     void Awake()
     {
         am = GetComponent<Animator>();
@@ -34,11 +36,11 @@ public class PlayerAnimator : MonoBehaviour
 
         if (mousePosition.x < transform.position.x)
         {
-            transform.eulerAngles = new Vector3(0f, -180f, 0f);
+            playerSprite.flipX = true;
         }
         else
         {
-            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            playerSprite.flipX = false;
         }
     }
 }
