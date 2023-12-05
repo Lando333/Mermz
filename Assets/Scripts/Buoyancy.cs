@@ -22,26 +22,8 @@ public class Buoyancy : MonoBehaviour
 
     void Update()
     {
-        // Implement your swim dash logic here
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SwimDash();
-        }
-
         // Implement sinusoidal sinking motion
         SineSink();
-    }
-
-    void SwimDash()
-    {
-        // Get the mouse position in world coordinates
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Calculate the direction from the player to the mouse
-        Vector2 dashDirection = (mousePosition - (Vector2)transform.position).normalized;
-
-        // Add a force in the calculated direction to simulate a swim dash
-        rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
     }
 
     void SineSink()
