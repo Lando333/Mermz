@@ -8,26 +8,25 @@ public class WeaponController : MonoBehaviour
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
     protected float currentCooldown;
-    bool autoAttack = true;
-    bool autoAim = false;
 
     protected PlayerMovement pm;
-
+    protected PlayerController pc;
     public Vector2 currentTarget;
     Vector2 mousePos;
+
 
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
+        pc = FindObjectOfType<PlayerController>();
         currentCooldown = weaponData.CooldownDuration;
     }
 
     protected virtual void Update()
     {
-        currentCooldown -= Time.deltaTime;
+        currentCooldown -= Time.deltaTime; 
         
-        ToggleAutoAttack();
-        if (autoAttack)
+        if (pc.autoAttack)
         {
             Attack();
         }
@@ -36,23 +35,13 @@ public class WeaponController : MonoBehaviour
             ManualAttack();
         }
 
-        ToggleAutoAim();
-        if (autoAim)
+        if (pc.autoAim)
         {
             AutoTarget();
         }
         else
         {
             AimAtMouse();
-        }
-    }
-
-    private void ToggleAutoAttack()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            print("toggle attack mode");
-            autoAttack = !autoAttack;
         }
     }
     private void ManualAttack()
@@ -73,15 +62,6 @@ public class WeaponController : MonoBehaviour
     {
         currentCooldown = weaponData.CooldownDuration;
     }
-
-    void ToggleAutoAim()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            print("toggle aim mode");
-            autoAim = !autoAim;
-        }
-    }
     private void AutoTarget()
     {
         GameObject closestEnemy = FindClosestEnemy();
@@ -91,6 +71,14 @@ public class WeaponController : MonoBehaviour
             // Set closestEnemy as the target
             currentTarget = closestEnemy.transform.position;
         }
+    }
+    private void AimAtMouse()
+    {
+        // Get the mouse position in the world space
+        mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Set mousePos as the target
+        currentTarget = mousePos;
     }
     private GameObject FindClosestEnemy()
     {
@@ -122,13 +110,5 @@ public class WeaponController : MonoBehaviour
         }
 
         return closestEnemy;
-    }
-    private void AimAtMouse()
-    {
-        // Get the mouse position in the world space
-        mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Set mousePos as the target
-        currentTarget = mousePos;
     }
 }
