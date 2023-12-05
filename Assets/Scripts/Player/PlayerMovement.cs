@@ -29,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         InputManagement();
+
+        // Implement your swim dash logic here
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SwimDash();
+        }
+
     }
 
     void FixedUpdate()
@@ -68,5 +75,17 @@ public class PlayerMovement : MonoBehaviour
         if (GameManager.instance.isGameOver) return;
 
         rb.velocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
+    }
+
+    void SwimDash()
+    {
+        // Get the mouse position in world coordinates
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calculate the direction from the player to the mouse
+        Vector2 dashDirection = (mousePosition - (Vector2)transform.position).normalized;
+
+        // Add a force in the calculated direction to simulate a swim dash
+        rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
     }
 }
