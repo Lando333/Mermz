@@ -23,8 +23,11 @@ public class EnemyStats : MonoBehaviour
     public Color damageColor = new Color(1, 0, 0, 1);   // The color of the damage flash
     public float damageFlashDuration = .2f;             // How long the flash lasts
     public float deathFadeTime = .6f;                   // Time it takes for enemy to fade
-    Color originalColor;
+    [SerializeField] Material whiteFlashMaterial;
     SpriteRenderer sr;
+    Color originalColor;
+    Material originalMaterial;
+
     EnemyMovement movement;
 
 
@@ -41,6 +44,7 @@ public class EnemyStats : MonoBehaviour
         player = FindObjectOfType<PlayerStats>().transform;
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
+        originalMaterial = sr.material;
 
         movement = GetComponent<EnemyMovement>();
     }
@@ -72,8 +76,12 @@ public class EnemyStats : MonoBehaviour
 
     IEnumerator DamageFlash()
     {
-        sr.color = damageColor;
+        sr.material = whiteFlashMaterial;
+        sr.color = Color.white;
+
         yield return new WaitForSeconds(damageFlashDuration);
+
+        sr.material = originalMaterial;
         sr.color = originalColor;
     }
 

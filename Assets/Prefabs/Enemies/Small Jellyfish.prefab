@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd48bcec14b269459d05f3e30dcfe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 0.25
 --- !u!114 &932461372079509860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +165,9 @@ MonoBehaviour:
   currentDamage: 0
   despawnDistance: 20
   damageColor: {r: 1, g: 1, b: 1, a: 1}
-  damageFlashDuration: 0.2
+  damageFlashDuration: 0.1
   deathFadeTime: 0.6
+  whiteFlashMaterial: {fileID: 2100000, guid: 0f0665ee45da9e547ae89e48d7e860a9, type: 2}
 --- !u!114 &4268927561541819888
 MonoBehaviour:
   m_ObjectHideFlags: 0
