@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Vector2 lastMovedVector;
 
+    public float dashForce = 5.0f;      // Adjust this to control the dash force
+
     //References
     Rigidbody2D rb;
     PlayerStats player;

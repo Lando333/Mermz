@@ -6,7 +6,6 @@ using UnityEngine;
 public class Buoyancy : MonoBehaviour
 {
     public float buoyancyFactor = 1.0f; // Adjust this to control buoyancy strength
-    public float dashForce = 5.0f;      // Adjust this to control the dash force
     public float sinkFrequency = 2.0f;  // Adjust this to control the sinking frequency
     public float sinkAmplitude = 1.0f;  // Adjust this to control the sinking amplitude
 
