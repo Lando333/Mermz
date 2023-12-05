@@ -5,19 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Buoyancy : MonoBehaviour
 {
-    public float buoyancyFactor = 1.0f; // Adjust this to control buoyancy strength
     public float sinkFrequency = 2.0f;  // Adjust this to control the sinking frequency
     public float sinkAmplitude = 1.0f;  // Adjust this to control the sinking amplitude
 
-    private Rigidbody2D rb;
     private float timeElapsed = 0f;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        // Adjust the gravity scale based on the buoyancy factor
-        rb.gravityScale = 1.0f - buoyancyFactor;
-    }
 
     void Update()
     {
