@@ -32,6 +32,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void HandleSpriteFlip()
     {
+        if (GameManager.instance.currentState != GameManager.GameState.Gameplay) return;
+
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (mousePosition.x < transform.position.x)
