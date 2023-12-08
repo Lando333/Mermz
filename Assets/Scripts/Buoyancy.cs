@@ -18,6 +18,8 @@ public class Buoyancy : MonoBehaviour
 
     void SineSink()
     {
+        if (GameManager.instance.currentState != GameManager.GameState.Gameplay) return;
+
         // Increment time elapsed
         timeElapsed += Time.deltaTime;
 
