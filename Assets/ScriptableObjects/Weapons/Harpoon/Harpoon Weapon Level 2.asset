@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 9102114265007546325, guid: b59f6f7a98bbd8e4c9980dc267bd1605, type: 3}
   damage: 5
-  speed: 15
+  speed: 12
   cooldownDuration: 2
   pierce: 2
   level: 2
   nextLevelControllerPrefab: {fileID: 989524987853184763, guid: 5231305bd348f834a88cfed21e7edab4, type: 3}
   name: Harpoon Level 2
-  description: Speed increases
+  description: Speed and Damage increases.
   icon: {fileID: 1902759062, guid: 0383b3001e889cb44ae4383e7dbea69a, type: 3}

@@ -16,9 +16,9 @@ MonoBehaviour:
   damage: 10
   speed: 15
   cooldownDuration: 2
-  pierce: 2
+  pierce: 3
   level: 3
   nextLevelControllerPrefab: {fileID: 0}
   name: Harpoon Level 3
-  description: Damage increases
+  description: Speed and Damage increases. Pierces additional target.
   icon: {fileID: 259104699, guid: 0383b3001e889cb44ae4383e7dbea69a, type: 3}
