@@ -20,5 +20,5 @@ MonoBehaviour:
   level: 3
   nextLevelControllerPrefab: {fileID: 0}
   name: Harpoon Level 3
-  description: Damage increases by 5
-  icon: {fileID: 554424054, guid: 2f24bfc0c00e8704fa014bfc7316c928, type: 3}
+  description: Damage increases
+  icon: {fileID: 259104699, guid: 0383b3001e889cb44ae4383e7dbea69a, type: 3}
