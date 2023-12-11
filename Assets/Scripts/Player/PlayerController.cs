@@ -6,14 +6,14 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public bool autoAttack = true;
-    public bool autoAim = true;
+    public bool autoAim = false;
 
     [SerializeField] TextMeshProUGUI aimDisplay;
     [SerializeField] TextMeshProUGUI attackDisplay;
 
     private void Start()
     {
-        AimOn();
+        AimOff();
         AttackOn();
     }
 
