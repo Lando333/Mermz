@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -89,7 +90,8 @@ public class GameManager : MonoBehaviour
                 if (!isGameOver)
                 {
                     isGameOver = true;
-                    Time.timeScale = 0f;
+                    Time.timeScale = 0f; 
+                    IncreaseCurrency();
                     DisplayResults();
                 }
                 break;
@@ -108,6 +110,12 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("STATE DOES NOT EXIST");
                 break;
         }
+    }
+
+    private void IncreaseCurrency()
+    {
+        CurrencyManager cm = FindObjectOfType<CurrencyManager>();
+        cm.UpdateCurrency();
     }
 
     public void ChangeState(GameState newState)

@@ -134,6 +134,9 @@ public class PlayerStats : MonoBehaviour
     public int currentLevelCap;
     public int initialCap;
 
+    // Currency variables
+    private CurrencyManager cm;
+
     // Used for defining level range and exp cap increase for that range
     [System.Serializable]
     public class LevelRange
@@ -173,6 +176,8 @@ public class PlayerStats : MonoBehaviour
     {
         characterData = CharacterSelector.GetData();
         CharacterSelector.instance.DestroySingleton();
+
+        cm = FindObjectOfType<CurrencyManager>();
 
         inventory = GetComponent<InventoryManager>();
 
@@ -235,6 +240,11 @@ public class PlayerStats : MonoBehaviour
         LevelUpChecker();
 
         UpdateExpBar();
+    }
+
+    public void IncreaseCurrency(int amount)
+    {
+        cm.currentAmount += amount;
     }
 
     private void LevelUpChecker()
