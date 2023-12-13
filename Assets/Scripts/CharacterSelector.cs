@@ -16,7 +16,6 @@ public class CharacterSelector : MonoBehaviour
         }
         else
         {
-            print("EXTRA " + this + " DELETED");
             Destroy(gameObject);
         }
     }
@@ -24,11 +23,6 @@ public class CharacterSelector : MonoBehaviour
     public static CharacterScriptableObject GetData()
     {
         return instance.characterData;
-    }
-
-    public void SelectCharacter(CharacterScriptableObject character)
-    {
-        characterData = character;
     }
 
     public void DestroySingleton()
