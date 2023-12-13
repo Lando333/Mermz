@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,8 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Vector2 lastMovedVector;
 
+    [SerializeField] private GameObject dashIcon;
     [SerializeField] private float dashForce = 5.0f;      // Adjust this to control the dash force
     [SerializeField] private float dashDuration = 0.5f;   // Adjust this to control the dash duration
+    [SerializeField] private float dashCooldown = 3.0f;   // Adjust this to control the dash cooldown
+    private float currentDashCooldown = 0;
 
     // References
     Rigidbody2D rb;
@@ -31,10 +35,19 @@ public class PlayerMovement : MonoBehaviour
     {
         InputManagement();
 
-        // Implement your swim dash logic here
+        DashManagement();
+    }
+
+    private void DashManagement()
+    {
+        currentDashCooldown -= Time.deltaTime;
+
+        if (currentDashCooldown > 0) return;
+        dashIcon.SetActive(true);
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(SwimDash());
+            StartCoroutine(Dash());
         }
     }
 
@@ -83,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += (Vector3)direction * dashForce * Time.deltaTime;
     }
 
-    IEnumerator SwimDash()
+    IEnumerator Dash()
     {
         // Get the mouse position in world coordinates
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -108,5 +121,9 @@ public class PlayerMovement : MonoBehaviour
         // Re-enable Rigidbody2D gravity and regular movement after the dash
         rb.gravityScale = 1;
         enabled = true;
+
+        // Start dash cooldown
+        currentDashCooldown = dashCooldown;
+        dashIcon.SetActive(false);
     }
 }
