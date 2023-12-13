@@ -183,4 +183,7 @@ MonoBehaviour:
   drops:
   - name: Blue Gem
     itemPrefab: {fileID: 5928400898171407881, guid: e60b1a63cf5a6e84ba864a3ad47028e0, type: 3}
-    dropRate: 99
+    dropRate: 80
+  - name: Dull Pearl
+    itemPrefab: {fileID: 2020544357974554947, guid: d933826f38619134f9ab6b4b35a1d588, type: 3}
+    dropRate: 20
