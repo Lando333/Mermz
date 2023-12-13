@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90e30f4582d24a54db837b79c50ece48, type: 3}
-  m_Name: Harpoon Character - ScubaDiver
+  m_Name: Diver Character
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d89c9ca63f421d441a338dfa188093b9, type: 3}
   animator: {fileID: 9100000, guid: 6440ce3ecc872f44bb6cb94acb34303d, type: 2}
