@@ -1,26 +1,26 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ButtonSound : MonoBehaviour
+public class ButtonSound : MonoBehaviour, IPointerEnterHandler
 {
-    [SerializeField] private AudioClip hoverSound;
-    [SerializeField] private AudioClip pressSound;
+    public AudioClip hoverSound;
+    public AudioClip pressSound;
     private AudioSource audioSource;
 
     void Start()
     {
+        // Ensure there is an AudioSource component on the same GameObject
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
-    public void OnPointerEnter()
-    {
-        StartCoroutine(PlayThenGo());
-    }
-    IEnumerator PlayThenGo()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         audioSource.PlayOneShot(hoverSound);
-        yield return new WaitForSeconds(0.3f);
     }
 
     public void OnButtonClick()
