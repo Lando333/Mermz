@@ -5618,6 +5618,15 @@ MonoBehaviour:
     waveQuota: 0
     spawnInterval: 2
     spawnCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemyName: Blue Bat
+      enemyCount: 40
+      spawnCount: 0
+      enemyPrefab: {fileID: 4476853264187028991, guid: b00a2dde6d6a85f46a788891973d2d32, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
   maxEnemiesAllowed: 7
@@ -6556,7 +6565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &717812948
 RectTransform:
   m_ObjectHideFlags: 0
