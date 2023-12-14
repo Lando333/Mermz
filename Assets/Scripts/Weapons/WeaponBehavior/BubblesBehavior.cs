@@ -29,8 +29,8 @@ public class BubblesBehavior : ProjectileWeaponBehavior
 
             transform.position += direction * currentSpeed * Time.deltaTime; // Sets the movement of the harpoon
 
-            // Check if the bubbles have stopped moving
-            if (currentSpeed <= 0.25f)
+            // Check if the bubbles have slowed down enough
+            if (currentSpeed <= 0.3f)
             {
                 hasStoppedMoving = true;
             }

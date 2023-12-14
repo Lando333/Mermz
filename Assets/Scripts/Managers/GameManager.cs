@@ -101,7 +101,6 @@ public class GameManager : MonoBehaviour
                 {
                     choosingUpgrade = true;
                     Time.timeScale = 0f;
-                    print("Upgrades shown");
                     levelUpScreen.SetActive(true);
                 }
                 break;
@@ -133,7 +132,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
             isPaused = true;
-            print("Paused");
         }
     }
 
