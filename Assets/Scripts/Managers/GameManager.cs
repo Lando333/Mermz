@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);
             isPaused = false;
-            print("Resumed");
         }
     }
 
