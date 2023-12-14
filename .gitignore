@@ -43,3 +43,4 @@ Logs/AssetImportWorker0.log
 Logs/AssetImportWorker1.log
 Logs/shadercompiler-AssetImportWorker0.log
 UserSettings/EditorUserSettings.asset
+*.log
