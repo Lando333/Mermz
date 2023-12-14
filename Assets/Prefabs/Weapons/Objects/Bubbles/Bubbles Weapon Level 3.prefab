@@ -102,7 +102,7 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 5dbc3a022f29f624197735819008d64a, type: 2}
   destroyAfterSeconds: 2
   speedDecayRate: 3
-  floatUpSpeed: 1
+  floatUpSpeed: 0.69
 --- !u!60 &4067980217012352623
 PolygonCollider2D:
   m_ObjectHideFlags: 0

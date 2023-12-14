@@ -16,7 +16,7 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: aec8e4fab69829d4a8a40c12edaa9125, type: 2}
   name: Octopus  Man
   startingWeapon: {fileID: 8090400968993293824, guid: f85325e05ef699d4b96f7823b4349c55, type: 3}
-  maxHealth: 100
+  maxHealth: 80
   recovery: 1
   moveSpeed: 2.5
   might: 1
