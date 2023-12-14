@@ -280,7 +280,7 @@ public class PlayerStats : MonoBehaviour
     void UpdateLevelText()
     {
         // Updates character's level display
-        levelText.text = "Lvl. " + level.ToString();
+        levelText.text = level.ToString();
     }
 
     public void TakeDamage(float dmg)
@@ -329,6 +329,8 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = characterData.MaxHealth;
             }
+
+            UpdateHealthBar();
         }
     }
 
