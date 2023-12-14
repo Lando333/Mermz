@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 5a9c90dab446c8a42b0e65ddf9486d4e, type: 3}
   animator: {fileID: 9100000, guid: 05c4e3895efc5544da39042105273e7f, type: 2}
   name: Anet
-  startingWeapon: {fileID: 989524987853184763, guid: b17ad06ef28131c4c84d555363390c60, type: 3}
+  startingWeapon: {fileID: 989524987853184763, guid: d3f1192a755afe94f9adad5a819a64d2, type: 3}
   maxHealth: 100
   recovery: 1
   moveSpeed: 3
