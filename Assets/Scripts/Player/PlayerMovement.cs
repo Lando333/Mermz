@@ -14,20 +14,16 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Vector2 lastMovedVector;
 
-    [SerializeField] private GameObject dashIcon;
-    [SerializeField] private float dashForce = 5.0f;      // Adjust this to control the dash force
-    [SerializeField] private float dashDuration = 0.5f;   // Adjust this to control the dash duration
-    [SerializeField] private float dashCooldown = 3.0f;   // Adjust this to control the dash cooldown
-    private float currentDashCooldown = 0;
+    float currentDashCooldown = 0;
 
     // References
-    Rigidbody2D rb;
-    PlayerStats player;
+    public Rigidbody2D rb;
+    public PlayerStats player;
 
     void Start()
     {
-        player = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<PlayerStats>();
         lastMovedVector = new Vector2(1, 0f);   // Sets initial movement of projectile
     }
 
@@ -38,22 +34,22 @@ public class PlayerMovement : MonoBehaviour
         DashManagement();
     }
 
-    private void DashManagement()
+    void FixedUpdate()
+    {
+        Move();
+    }
+
+    void DashManagement()
     {
         currentDashCooldown -= Time.deltaTime;
-
+        
         if (currentDashCooldown > 0) return;
-        dashIcon.SetActive(true);
+        GameManager.instance.dashDisplayIcon.enabled = true;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Dash());
         }
-    }
-
-    void FixedUpdate()
-    {
-        Move();
     }
 
     void InputManagement()
@@ -90,12 +86,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDir.x * player.CurrentMoveSpeed, moveDir.y * player.CurrentMoveSpeed);
     }
 
-    void Swim(Vector2 direction)
+    public void Swim(Vector2 direction)
     {
         // Move the player directly based on the dash direction
-        transform.position += (Vector3)direction * dashForce * Time.deltaTime;
+        transform.position += (Vector3)direction * player.DashForce * Time.deltaTime;
     }
-
     IEnumerator Dash()
     {
         // Get the mouse position in world coordinates
@@ -111,8 +106,13 @@ public class PlayerMovement : MonoBehaviour
         // Disable regular movement during the dash
         enabled = false;
 
+        // Play dash sound effect
+
+
+        GameManager.instance.dashDisplayIcon.enabled = false;
+
         // Perform the dash
-        for (float t = 0; t < dashDuration; t += Time.deltaTime)
+        for (float t = 0; t < player.DashDuration; t += Time.deltaTime)
         {
             Swim(dashDirection);
             yield return null;
@@ -123,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
         enabled = true;
 
         // Start dash cooldown
-        currentDashCooldown = dashCooldown;
-        dashIcon.SetActive(false);
+        currentDashCooldown = player.DashCooldown;
     }
 }

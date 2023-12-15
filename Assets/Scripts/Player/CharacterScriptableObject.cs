@@ -20,7 +20,29 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     GameObject startingWeapon;
     public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
-    
+
+    [Header("Dash Settings")]
+
+    [SerializeField]
+    float dashForce;
+    public float DashForce { get => dashForce; private set => dashForce = value; }
+
+    [SerializeField]
+    float dashDuration;
+    public float DashDuration { get => dashDuration; private set => dashDuration = value; }
+
+    [SerializeField]
+    float dashCooldown;
+    public float DashCooldown { get => dashCooldown; private set => dashCooldown = value; }
+
+    [SerializeField]
+    AudioClip dashSoundEffect;
+    public AudioClip DashSoundEffect { get => dashSoundEffect; private set => dashSoundEffect = value; }
+
+    //[SerializeField] private float dashForce = 5.0f;      // Adjust this to control the dash force
+    //[SerializeField] private float dashDuration = 0.5f;   // Adjust this to control the dash duration
+    //[SerializeField] private float dashCooldown = 3.0f;   // Adjust this to control the dash cooldown
+
     // Base stats for the character
     [Header("Base Stats")]
     [SerializeField]

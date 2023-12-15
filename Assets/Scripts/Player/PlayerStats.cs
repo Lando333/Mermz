@@ -127,15 +127,60 @@ public class PlayerStats : MonoBehaviour
     }
 
     #endregion
+    
+    //Dash stats
+    float dashForce;
+    float dashDuration;
+    float dashCooldown;
+
+    #region Dash Stats
+
+    public float DashForce
+    {
+        get { return dashForce; }
+        set
+        {
+            // Check if the value has changed
+            if (dashForce != value)
+            {
+                dashForce = value;
+                // Add additional logic here that needs to be executed when value changes
+            }
+        }
+    }
+    public float DashDuration
+    {
+        get { return dashDuration; }
+        set
+        {
+            // Check if the value has changed
+            if (dashDuration != value)
+            {
+                dashDuration = value;
+                // Add additional logic here that needs to be executed when value changes
+            }
+        }
+    }
+    public float DashCooldown
+    {
+        get { return dashCooldown; }
+        set
+        {
+            // Check if the value has changed
+            if (dashCooldown != value)
+            {
+                dashCooldown = value;
+                // Add additional logic here that needs to be executed when value changes
+            }
+        }
+    }
+    #endregion
 
     [Header("Experience/Level")]
     public int experience = 0;
     public int level = 1;
     public int currentLevelCap;
     public int initialCap;
-
-    // Currency variables
-    private CurrencyManager cm;
 
     // Used for defining level range and exp cap increase for that range
     [System.Serializable]
@@ -158,6 +203,9 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    // Currency variables
+    private CurrencyManager cm;
+
     [Header("UI")]
     public Image healthBar;
     public Image expBar;
@@ -166,11 +214,9 @@ public class PlayerStats : MonoBehaviour
     [Header("Setup")]
     Animator anim;
     
-
     public GameObject secWeapon;
     public GameObject passItem1;
     public GameObject passItem2;
-
 
     void Awake()
     {
@@ -187,6 +233,10 @@ public class PlayerStats : MonoBehaviour
         CurrentMight = characterData.Might;
         CurrentProjectileSpeed = characterData.ProjectileSpeed;
         CurrentMagnet = characterData.Magnet;
+
+        DashForce = characterData.DashForce;
+        DashDuration = characterData.DashDuration;
+        DashCooldown = characterData.DashCooldown;
 
         SpawnWeapon(characterData.StartingWeapon);
         //SpawnWeapon(secWeapon);
