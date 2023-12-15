@@ -19,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
     // References
     public Rigidbody2D rb;
     public PlayerStats player;
+    AudioManager audioManager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerStats>();
+        audioManager = FindObjectOfType<AudioManager>();
         lastMovedVector = new Vector2(1, 0f);   // Sets initial movement of projectile
     }
 
@@ -48,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // Play dash sound effect
+            audioManager.audioSource.PlayOneShot(player.DashSoundEffect);
+
             StartCoroutine(Dash());
         }
     }
@@ -106,9 +111,7 @@ public class PlayerMovement : MonoBehaviour
         // Disable regular movement during the dash
         enabled = false;
 
-        // Play dash sound effect
-
-
+        // Turn off Dash icon
         GameManager.instance.dashDisplayIcon.enabled = false;
 
         // Perform the dash

@@ -132,6 +132,7 @@ public class PlayerStats : MonoBehaviour
     float dashForce;
     float dashDuration;
     float dashCooldown;
+    AudioClip dashSoundEffect;
 
     #region Dash Stats
 
@@ -170,6 +171,19 @@ public class PlayerStats : MonoBehaviour
             if (dashCooldown != value)
             {
                 dashCooldown = value;
+                // Add additional logic here that needs to be executed when value changes
+            }
+        }
+    }
+    public AudioClip DashSoundEffect
+    {
+        get { return dashSoundEffect; }
+        set
+        {
+            // Check if the value has changed
+            if (dashSoundEffect != value)
+            {
+                dashSoundEffect = value;
                 // Add additional logic here that needs to be executed when value changes
             }
         }
@@ -237,6 +251,7 @@ public class PlayerStats : MonoBehaviour
         DashForce = characterData.DashForce;
         DashDuration = characterData.DashDuration;
         DashCooldown = characterData.DashCooldown;
+        DashSoundEffect = characterData.DashSoundEffect;
 
         SpawnWeapon(characterData.StartingWeapon);
         //SpawnWeapon(secWeapon);
