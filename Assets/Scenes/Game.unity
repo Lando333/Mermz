@@ -5620,18 +5620,22 @@ MonoBehaviour:
     spawnCount: 0
   - waveName: Wave 2
     enemyGroups:
-    - enemyName: Blue Bat
+    - enemyName: Small Red Jellyfish
       enemyCount: 40
       spawnCount: 0
       enemyPrefab: {fileID: 4476853264187028991, guid: b00a2dde6d6a85f46a788891973d2d32, type: 3}
+    - enemyName: Small Jellyfish
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 4476853264187028991, guid: 3e49df95669e16d48bec4245312d27ec, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 2
     spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
-  maxEnemiesAllowed: 7
+  maxEnemiesAllowed: 15
   maxEnemiesReached: 0
-  waveInterval: 5
+  waveInterval: 60
   relativeSpawnPoints:
   - {fileID: 186652051}
   - {fileID: 96254338}

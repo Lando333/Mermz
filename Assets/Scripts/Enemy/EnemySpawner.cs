@@ -86,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         waves[currentWaveCount].waveQuota = currentWaveQuota;
-        //print(currentWaveQuota);
+        print(currentWaveQuota);
     }
 
     void SpawnEnemies()
