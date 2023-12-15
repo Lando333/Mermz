@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 932461372079509860}
   - component: {fileID: 4268927561541819888}
   m_Layer: 0
-  m_Name: Blue Bat
+  m_Name: Small Red Jellyfish
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 583418575
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618046454, guid: 53d42ce87cec08a48b5d365cdc94c052, type: 3}
-  m_Color: {r: 0.2216981, g: 0.6077548, b: 1, a: 1}
+  m_Sprite: {fileID: 491343007, guid: 323116d08d09a9641916584d9322c3ca, type: 3}
+  m_Color: {r: 0.9528302, g: 0.12601301, b: 0.04045032, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,14 +119,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84375, y: 0.6875}
+    oldSize: {x: 0.25, y: 0.28125}
     newSize: {x: 0.84375, y: 0.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,6 +164,10 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawnDistance: 20
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6
+  whiteFlashMaterial: {fileID: 2100000, guid: 0f0665ee45da9e547ae89e48d7e860a9, type: 2}
 --- !u!114 &4268927561541819888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,4 +183,10 @@ MonoBehaviour:
   drops:
   - name: Blue Gem
     itemPrefab: {fileID: 5928400898171407881, guid: e60b1a63cf5a6e84ba864a3ad47028e0, type: 3}
-    dropRate: 99
+    dropRate: 80
+  - name: Dull Pearl
+    itemPrefab: {fileID: 2020544357974554947, guid: d933826f38619134f9ab6b4b35a1d588, type: 3}
+    dropRate: 42
+  - name: Sushi
+    itemPrefab: {fileID: 3410654202267570771, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
+    dropRate: 3
