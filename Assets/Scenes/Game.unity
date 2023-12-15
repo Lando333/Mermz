@@ -8695,6 +8695,7 @@ MonoBehaviour:
   currentMightDisplay: {fileID: 5624156}
   currentProjectileSpeedDisplay: {fileID: 1850862944}
   currentMagnetDisplay: {fileID: 2067362806}
+  dashDisplayIcon: {fileID: 1151969401}
   chosenCharacterImage: {fileID: 1159731895}
   chosenCharacterName: {fileID: 1228890358}
   levelReachedDisplay: {fileID: 200312374}
@@ -17065,10 +17066,8 @@ MonoBehaviour:
   lastVerticalVector: 0
   moveDir: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
-  dashIcon: {fileID: 1151969399}
-  dashForce: 5
-  dashDuration: 0.25
-  dashCooldown: 3
+  rb: {fileID: 0}
+  player: {fileID: 0}
 --- !u!95 &1899641948
 Animator:
   serializedVersion: 4
