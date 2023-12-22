@@ -46,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
         currentDashCooldown -= Time.deltaTime;
         
         if (currentDashCooldown > 0) return;
-        GameManager.instance.dashDisplayIcon.enabled = true;
+        
+        // Change Dash icon
+        GameManager.instance.dashAvailable.enabled = true;
+        GameManager.instance.dashUnavailable.enabled = false;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -111,8 +114,9 @@ public class PlayerMovement : MonoBehaviour
         // Disable regular movement during the dash
         enabled = false;
 
-        // Turn off Dash icon
-        GameManager.instance.dashDisplayIcon.enabled = false;
+        // Change Dash icon
+        GameManager.instance.dashUnavailable.enabled = true;
+        GameManager.instance.dashAvailable.enabled = false;
 
         // Perform the dash
         for (float t = 0; t < player.DashDuration; t += Time.deltaTime)
