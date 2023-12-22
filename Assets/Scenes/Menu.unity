@@ -534,8 +534,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Anet
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
-  m_sharedMaterial: {fileID: -153319799080039591, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
+  m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 779687670}
   - component: {fileID: 779687669}
   - component: {fileID: 779687668}
+  - component: {fileID: 779687671}
   m_Layer: 5
   m_Name: Select Diver
   m_TagString: Untagged
@@ -861,6 +862,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 779687671}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &779687669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,6 +912,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779687666}
   m_CullTransparentMesh: 1
+--- !u!114 &779687671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779687666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9665ac3fe5e1a4abd6898d34631864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  pressSound: {fileID: 8300000, guid: 75313d6fa0921284bbb6cb7803d3ec61, type: 3}
 --- !u!1 &792547662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,8 +1255,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
-  m_sharedMaterial: {fileID: -153319799080039591, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
+  m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1424,6 +1451,7 @@ GameObject:
   - component: {fileID: 1103617316}
   - component: {fileID: 1103617315}
   - component: {fileID: 1103617314}
+  - component: {fileID: 1103617317}
   m_Layer: 5
   m_Name: Select OctopusMan
   m_TagString: Untagged
@@ -1544,6 +1572,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 779687671}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1103617315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,6 +1622,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103617312}
   m_CullTransparentMesh: 1
+--- !u!114 &1103617317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103617312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9665ac3fe5e1a4abd6898d34631864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  pressSound: {fileID: 8300000, guid: 75313d6fa0921284bbb6cb7803d3ec61, type: 3}
 --- !u!1 &1125879020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,8 +1696,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Octopus Man
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
-  m_sharedMaterial: {fileID: -153319799080039591, guid: 5b0afd2a706ad2a4db4a3d30ab1b1949, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
+  m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1852,6 +1906,7 @@ GameObject:
   - component: {fileID: 1538826262}
   - component: {fileID: 1538826261}
   - component: {fileID: 1538826260}
+  - component: {fileID: 1538826263}
   m_Layer: 5
   m_Name: Select Mermaid
   m_TagString: Untagged
@@ -1972,6 +2027,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 779687671}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1538826261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,6 +2077,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538826258}
   m_CullTransparentMesh: 1
+--- !u!114 &1538826263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538826258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9665ac3fe5e1a4abd6898d34631864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  pressSound: {fileID: 8300000, guid: 75313d6fa0921284bbb6cb7803d3ec61, type: 3}
 --- !u!1 &1550005232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,8 +2313,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 740e07478e3882a4784ecf5ff8a7c1de, type: 2}
-  m_sharedMaterial: {fileID: 713955625799388899, guid: 740e07478e3882a4784ecf5ff8a7c1de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
+  m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2257,8 +2338,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2911,8 +2992,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CHOOSE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3ca94876a8cfdd42b856896c84462b0, type: 2}
-  m_sharedMaterial: {fileID: -210028797526648386, guid: f3ca94876a8cfdd42b856896c84462b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
+  m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2936,8 +3017,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

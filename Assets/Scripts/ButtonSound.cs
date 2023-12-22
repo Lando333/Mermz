@@ -15,11 +15,15 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (hoverSound == null) return;
+
         audioSource.PlayOneShot(hoverSound);
     }
 
     public void OnButtonClick()
     {
+        if (pressSound == null) return;
+
         audioSource.PlayOneShot(pressSound);
     }
 }
