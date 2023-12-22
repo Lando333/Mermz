@@ -165,7 +165,7 @@ MonoBehaviour:
   currentDamage: 0
   despawnDistance: 20
   damageColor: {r: 1, g: 1, b: 1, a: 1}
-  damageFlashDuration: 0.1
+  damageFlashDuration: 0.2
   deathFadeTime: 0.6
   whiteFlashMaterial: {fileID: 2100000, guid: 0f0665ee45da9e547ae89e48d7e860a9, type: 2}
 --- !u!114 &4268927561541819888
