@@ -16,7 +16,6 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("EXTRA " + this + " DELETED");
             Destroy(gameObject);
         }
         audioSource = GetComponent<AudioSource>();
