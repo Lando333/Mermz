@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10003828819a759408568a1b4045737c, type: 3}
-  m_Name: Green Bat Enemy
+  m_Name: Small Red Jellyfish Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 2.2
-  maxHealth: 15
-  damage: 15
+  moveSpeed: 1.5
+  maxHealth: 10
+  damage: 10
