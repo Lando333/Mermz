@@ -24,7 +24,7 @@ public class MeleeWeaponBehavior : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
+        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentPower;
     }
 
     protected virtual void Start()

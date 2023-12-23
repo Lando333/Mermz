@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentHealthDisplay;
     public TextMeshProUGUI currentRecoveryDisplay;
     public TextMeshProUGUI currentMoveSpeedDisplay;
-    public TextMeshProUGUI currentMightDisplay;
+    public TextMeshProUGUI currentPowerDisplay;
     public TextMeshProUGUI currentProjectileSpeedDisplay;
     public TextMeshProUGUI currentMagnetDisplay;
     public Image dashAvailable;

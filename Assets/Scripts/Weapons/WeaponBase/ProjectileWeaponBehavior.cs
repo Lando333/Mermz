@@ -42,7 +42,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
+        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentPower;
     }
 
     public void RotateProjectile()

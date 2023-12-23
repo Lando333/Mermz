@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     float currentRecovery;
     float currentHealth;
     float currentMoveSpeed;
-    float currentMight;
+    float currentPower;
     float currentProjectileSpeed;
     float currentMagnet;
 
@@ -72,18 +72,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public float CurrentMight
+    public float CurrentPower
     {
-        get { return currentMight; }
+        get { return currentPower; }
         set
         {
             // Check if the value has changed
-            if (currentMight != value)
+            if (currentPower != value)
             {
-                currentMight = value;
+                currentPower = value;
                 if (GameManager.instance != null)
                 {
-                    GameManager.instance.currentMightDisplay.text = currentMight.ToString();
+                    GameManager.instance.currentPowerDisplay.text = currentPower.ToString();
                 }
                 // Add additional logic here that needs to be executed when value changes
             }
@@ -244,7 +244,7 @@ public class PlayerStats : MonoBehaviour
         CurrentHealth = characterData.MaxHealth;
         CurrentRecovery = characterData.Recovery;
         CurrentMoveSpeed = characterData.MoveSpeed;
-        CurrentMight = characterData.Might;
+        CurrentPower = characterData.Power;
         CurrentProjectileSpeed = characterData.ProjectileSpeed;
         CurrentMagnet = characterData.Magnet;
 
@@ -270,7 +270,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentHealthDisplay.text = currentHealth + "/" + characterData.MaxHealth;
         GameManager.instance.currentRecoveryDisplay.text = currentRecovery.ToString();
         GameManager.instance.currentMoveSpeedDisplay.text = currentMoveSpeed.ToString();
-        GameManager.instance.currentMightDisplay.text = currentMight.ToString();
+        GameManager.instance.currentPowerDisplay.text = currentPower.ToString();
         GameManager.instance.currentProjectileSpeedDisplay.text = currentProjectileSpeed.ToString();
         GameManager.instance.currentMagnetDisplay.text = currentMagnet.ToString();
 
