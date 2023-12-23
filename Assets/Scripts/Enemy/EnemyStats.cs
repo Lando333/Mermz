@@ -29,6 +29,7 @@ public class EnemyStats : MonoBehaviour
     Material originalMaterial;
 
     EnemyMovement movement;
+    DamageManager damageManager;
 
 
 
@@ -47,6 +48,7 @@ public class EnemyStats : MonoBehaviour
         originalMaterial = sr.material;
 
         movement = GetComponent<EnemyMovement>();
+        damageManager = FindObjectOfType<DamageManager>();
     }
 
     void Update()
@@ -63,10 +65,19 @@ public class EnemyStats : MonoBehaviour
         transform.position = player.position + es.relativeSpawnPoints[UnityEngine.Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg, string weaponType)
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
+
+        if (weaponType == "Bubbles") damageManager.AddBubblesDamage(dmg);
+        else if (weaponType == "Harpoon") damageManager.AddHarpoonDamage(dmg);
+        else if (weaponType == "Ink") damageManager.AddInkDamage(dmg);
+        else
+        {
+            print(weaponType);
+            damageManager.AddInkDamage(dmg);
+        }
 
         if (currentHealth <= 0)
         {

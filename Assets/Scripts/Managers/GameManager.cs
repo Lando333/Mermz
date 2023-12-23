@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
     public Image dashAvailable;
     public Image dashUnavailable;
 
+    [Header("Current Damage Displays")]
+    public TextMeshProUGUI currentBubblesDamage;
+    public TextMeshProUGUI currentHarpoonDamage;
+    public TextMeshProUGUI currentInkDamage;
+
     [Header("Results Screen Displays")]
     public Image chosenCharacterImage;
     public TextMeshProUGUI chosenCharacterName;

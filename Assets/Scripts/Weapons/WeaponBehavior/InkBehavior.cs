@@ -6,10 +6,16 @@ public class InkBehavior : MeleeWeaponBehavior
 {
     List<GameObject> markedEnemies;
 
+    public string weaponType = "Ink";
+
+    private float currentDmg;
+
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
+
+        currentDmg = GetCurrentDamage();
     }
 
     protected override void OnTriggerEnter2D(Collider2D col)
@@ -17,7 +23,7 @@ public class InkBehavior : MeleeWeaponBehavior
         if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage());
+            enemy.TakeDamage(currentDmg, weaponType);
 
             markedEnemies.Add(col.gameObject); // Marks enemy so they don't take damage from same instance of ink
         }
@@ -25,7 +31,7 @@ public class InkBehavior : MeleeWeaponBehavior
         {
             if (col.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(GetCurrentDamage());
+                breakable.TakeDamage(currentDmg);
 
                 markedEnemies.Add(col.gameObject);
             }

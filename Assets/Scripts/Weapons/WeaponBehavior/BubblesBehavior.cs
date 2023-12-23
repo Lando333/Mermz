@@ -9,12 +9,18 @@ public class BubblesBehavior : ProjectileWeaponBehavior
     [SerializeField] float speedDecayRate = 0.1f; // Adjust the rate of speed decay
     [SerializeField] float floatUpSpeed = 1.0f; // Adjust the speed at which bubbles float up after stopping
 
+    public string weaponType = "Bubbles";
+
     private bool hasStoppedMoving = false;
+    private float currentDmg;
+
 
     protected override void Start()
     {
         base.Start();
         markedEnemies = new List<GameObject>();
+
+        currentDmg = GetCurrentDamage();
     }
 
     void Update()
@@ -47,8 +53,8 @@ public class BubblesBehavior : ProjectileWeaponBehavior
         if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage());
-
+            enemy.TakeDamage(currentDmg, weaponType);
+            
             markedEnemies.Add(col.gameObject); // Marks enemy so they don't take damage from same instance of bubbles
         }
         else if (col.CompareTag("Prop"))

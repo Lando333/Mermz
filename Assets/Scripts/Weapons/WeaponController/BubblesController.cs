@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BubblesController : WeaponController
 {
+
     protected override void Start()
     {
         base.Start();
