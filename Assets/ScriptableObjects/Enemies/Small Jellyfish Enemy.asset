@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10003828819a759408568a1b4045737c, type: 3}
   m_Name: Small Jellyfish Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 1.1
+  moveSpeed: 0.9
   maxHealth: 10
   damage: 3
