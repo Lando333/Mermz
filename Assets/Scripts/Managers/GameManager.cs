@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeSurvivedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
-    public List<TextMeshProUGUI> weaponDamageDisplays = new List<TextMeshProUGUI>();
 
     [Header("Stopwatch")]
     public float timeLimit; // In seconds

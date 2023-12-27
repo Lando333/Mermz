@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Small Jellyfish Enemy
   m_EditorClassIdentifier: 
   moveSpeed: 0.9
-  maxHealth: 10
+  maxHealth: 6
   damage: 3

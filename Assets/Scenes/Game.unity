@@ -9092,8 +9092,7 @@ MonoBehaviour:
   - {fileID: 333981631}
   - {fileID: 2108354425}
   - {fileID: 191977115}
-  weaponDamageDisplays: []
-  timeLimit: 300
+  timeLimit: 180
   stopwatchDisplay: {fileID: 2105067294}
   isGameOver: 0
   isPaused: 0
@@ -15114,7 +15113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1521749508}
   m_Layer: 0
-  m_Name: Gems
+  m_Name: TestGems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19059,67 +19058,6 @@ Transform:
   m_Father: {fileID: 1521749508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2014299772
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3410654202267570771, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_Name
-      value: Sushi
-      objectReference: {fileID: 0}
-    - target: {fileID: 3410654202267570771, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3596018718280315265, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b12e18c8dbee0944ba571590f6d8ec91, type: 3}
 --- !u!1 &2026824194
 GameObject:
   m_ObjectHideFlags: 0
@@ -20346,13 +20284,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5339745301816105368, guid: 5b9fd462610736f4dbe35064b4bd9118, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5339745303656995904, guid: 5b9fd462610736f4dbe35064b4bd9118, type: 3}
       propertyPath: m_Name
       value: TerrainChunk
       objectReference: {fileID: 0}
     - target: {fileID: 5339745303656995904, guid: 5b9fd462610736f4dbe35064b4bd9118, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5339745303656995906, guid: 5b9fd462610736f4dbe35064b4bd9118, type: 3}
       propertyPath: m_RootOrder
