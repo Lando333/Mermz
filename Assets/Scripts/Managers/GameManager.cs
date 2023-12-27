@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject resultsScreen;
     public GameObject levelUpScreen;
 
-    [Header("Current Stat Displays")]
+    [Header("Pause Screen Character Stat Displays")]
     public TextMeshProUGUI currentHealthDisplay;
     public TextMeshProUGUI currentRecoveryDisplay;
     public TextMeshProUGUI currentMoveSpeedDisplay;
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public Image dashAvailable;
     public Image dashUnavailable;
 
-    [Header("Current Damage Displays")]
+    [Header("Pause Screen Damage Displays")]
     public TextMeshProUGUI currentBubblesDamage;
     public TextMeshProUGUI currentHarpoonDamage;
     public TextMeshProUGUI currentInkDamage;
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeSurvivedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+    public List<TextMeshProUGUI> weaponDamageDisplays = new List<TextMeshProUGUI>();
 
     [Header("Stopwatch")]
     public float timeLimit; // In seconds

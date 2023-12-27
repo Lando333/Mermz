@@ -3085,7 +3085,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AGAIN
+  m_text: PLAY AGAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
   m_sharedMaterial: {fileID: -7057359042712100267, guid: f94498b938b13224c9dd719cd6530a0d, type: 2}
@@ -7440,7 +7440,7 @@ GameObject:
   - component: {fileID: 812913470}
   - component: {fileID: 812913469}
   m_Layer: 5
-  m_Name: AgainButton
+  m_Name: PlayAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7536,7 +7536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.51370597, g: 0.88329864, b: 0.9811321, a: 1}
+  m_Color: {r: 0.5137255, g: 0.98039216, b: 0.5991448, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9092,6 +9092,7 @@ MonoBehaviour:
   - {fileID: 333981631}
   - {fileID: 2108354425}
   - {fileID: 191977115}
+  weaponDamageDisplays: []
   timeLimit: 300
   stopwatchDisplay: {fileID: 2105067294}
   isGameOver: 0
@@ -17056,7 +17057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0, b: 0.114187, a: 0.7607843}
+  m_Color: {r: 0.42352942, g: 0, b: 0.31317014, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

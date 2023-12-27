@@ -8,10 +8,20 @@ public class DamageManager : MonoBehaviour
     public float harpoonDamage;
     public float inkDamage;
 
+    private string mermaidName = "Anet";
+    private string diverName = "Dan";
+    private string octopusManName = "Octopus Man";
+
     [SerializeField] GameObject bubblesField;
     [SerializeField] GameObject harpoonField;
     [SerializeField] GameObject inkField;
 
+    private void Start()
+    {
+        if (GameManager.instance.chosenCharacterName.text == mermaidName) bubblesField.SetActive(true);
+        else if (GameManager.instance.chosenCharacterName.text == diverName) harpoonField.SetActive(true);
+        else if (GameManager.instance.chosenCharacterName.text == octopusManName) inkField.SetActive(true);
+    }
 
     private void Update()
     {
@@ -19,9 +29,9 @@ public class DamageManager : MonoBehaviour
         if (harpoonDamage > 0) harpoonField.SetActive(true);
         if (inkDamage > 0) inkField.SetActive(true);
 
-        GameManager.instance.currentBubblesDamage.text = bubblesDamage.ToString();
-        GameManager.instance.currentHarpoonDamage.text = harpoonDamage.ToString();
-        GameManager.instance.currentInkDamage.text = inkDamage.ToString();
+        GameManager.instance.currentBubblesDamage.text = Mathf.RoundToInt(bubblesDamage).ToString();
+        GameManager.instance.currentHarpoonDamage.text = Mathf.RoundToInt(harpoonDamage).ToString();
+        GameManager.instance.currentInkDamage.text = Mathf.RoundToInt(inkDamage).ToString();
     }
 
 
