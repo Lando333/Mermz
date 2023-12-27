@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d89c9ca63f421d441a338dfa188093b9, type: 3}
   animator: {fileID: 9100000, guid: 6440ce3ecc872f44bb6cb94acb34303d, type: 2}
-  name: Deep Diver Dan
+  name: Dan
   startingWeapon: {fileID: 989524987853184763, guid: b17ad06ef28131c4c84d555363390c60, type: 3}
   dashForce: 3
   dashDuration: 0.4
