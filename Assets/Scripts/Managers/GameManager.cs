@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI levelReachedDisplay;
     public TextMeshProUGUI timeSurvivedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
-    public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+    public List<Image> chosenPassiveItemsUI = new List<Image>(6);   
 
     [Header("Stopwatch")]
     public float timeLimit; // In seconds
@@ -258,7 +258,15 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(stopwatchTime % 60);
 
         // Update stopwatch text to display the elapsed time
-        stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if (minutes < 10)
+        {
+            // Use a single digit for minutes when it's less than 10
+            stopwatchDisplay.text = string.Format("{0}:{1:00}", minutes, seconds);
+        }
+        else
+        {
+            stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
     }
 
     public void StartLevelUp()
