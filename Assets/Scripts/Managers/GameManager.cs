@@ -48,7 +48,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI levelReachedDisplay;
     public TextMeshProUGUI timeSurvivedDisplay;
     public List<Image> chosenWeaponsUI = new List<Image>(6);
-    public List<Image> chosenPassiveItemsUI = new List<Image>(6);   
+    public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+
+    [Header("Results Screen Damage Displays")]
+    public TextMeshProUGUI finalBubblesDamage;
+    public TextMeshProUGUI finalHarpoonDamage;
+    public TextMeshProUGUI finalInkDamage;
 
     [Header("Stopwatch")]
     public float timeLimit; // In seconds
@@ -178,6 +183,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         timeSurvivedDisplay.text = stopwatchDisplay.text;
+        DamageManager dm = FindObjectOfType<DamageManager>();
+        dm.FinalDamageDisplay();
         ChangeState(GameState.GameOver);
     }
 
