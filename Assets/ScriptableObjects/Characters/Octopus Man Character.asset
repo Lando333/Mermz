@@ -13,16 +13,21 @@ MonoBehaviour:
   m_Name: Octopus Man Character
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 38d7d390ecad7b346be5e17f6495cc95, type: 3}
+  silhouette: {fileID: 21300000, guid: 55770070fd617c84ebf0eaedb96adbea, type: 3}
   animator: {fileID: 9100000, guid: aec8e4fab69829d4a8a40c12edaa9125, type: 2}
   name: Octopus Man
   startingWeapon: {fileID: 8090400968993293824, guid: f85325e05ef699d4b96f7823b4349c55, type: 3}
-  dashForce: 7
-  dashDuration: 0.4
-  dashCooldown: 2.6
-  dashSoundEffect: {fileID: 8300000, guid: dae2b83f6d3efa0418cc4b3928279099, type: 3}
   maxHealth: 80
   recovery: 1.5
   moveSpeed: 2.5
   power: 1.8
   projectileSpeed: 0
   magnet: 1.8
+  dashForce: 7
+  dashDuration: 0.4
+  dashCooldown: 2.6
+  dashSoundEffect: {fileID: 8300000, guid: dae2b83f6d3efa0418cc4b3928279099, type: 3}
+  characterFlavorText: Whether you envision him as that quirky office co-worker,
+    or an underwater dog walker, Octopus Man is sure to blow your mind with his ink.
+    As a licensed member of Mollusks INKcorporated, Octopus man takes his battles
+    seriously.
