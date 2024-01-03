@@ -1173,7 +1173,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 200, y: 67}
-  m_SizeDelta: {x: 80, y: 120}
+  m_SizeDelta: {x: 160, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103617314
 MonoBehaviour:
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9bc4433c2256eb4eb364f9c5fd6e0a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b286c445dcb1d064c92fd054bddaf322, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1543,6 +1543,8 @@ MonoBehaviour:
   diverName: {fileID: 997567380}
   octopusManSilhouette: {fileID: 398584419}
   octopusManName: {fileID: 1125879022}
+  diverUnlocked: 0
+  octoManUnlocked: 0
 --- !u!4 &1523465386
 Transform:
   m_ObjectHideFlags: 0
